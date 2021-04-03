@@ -1,0 +1,159 @@
+{% load static%}
+{% load render_partial%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'components/head.html' %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        
+        
+        
+        {% include 'components/siteheader.html'%}
+        
+
+        <section class="page-title">
+            <div class="auto-container">
+                <h1>Contact Me</h1>
+            </div>
+        </section>
+
+
+        <section class="we-are-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    
+                    <!-- Title Column -->
+                    <div class="title-column col-lg-4 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <!-- Sec Title -->
+                            <div class="sec-title qrcenter">
+                                <img class="qrimg" src="{% static 'images/myQRinfo.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-4 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <h4>QR CODE</h4>
+                            <div class="text">This Qr-code contains all my contact info. <br>take a pic and save it. <br><br>it might come in handy . . .</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Column -->
+                    <!-- <div class="content-column col-lg-4 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <h4>History</h4>
+                            <div class="text"> </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="contact-page-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    
+                    <!-- Title Column -->
+                    <div class="title-column col-lg-4 col-md-12 col-sm-12 ">
+
+                        <div class="inner-column contact-info-section">
+
+                            <h3>My Contact Info</h3>
+
+                            <div class="text txt-center">
+                                <p><a href="tel:+989335282975"><i class="social fontawe font-size-18 fa fa-phone"></i> <span>+98 933 528 2975</span></a></p>
+                                <p><a href="mailto:sia.dev.acc@gmail.com"><i class="social fontawe font-size-18 fa fa-google"></i> <span>sia.dev.acc@gmail.com</span></a></p>
+                                <p><a href="http://github.con/siavashmehran"><i class="social fontawe font-size-18 fa fa-github"></i> <span>GitHub</span></a></p>
+                                <p><a href="http://linkedin/siavashmehran"><i class="social fontawe font-size-18 fa fa-linkedin"></i> <span>LinkedIn</span></a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- Form Column -->
+                    <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <h3>Send me a message</h3>
+                            <!-- Contact Form -->
+                            <div class="contact-form">
+                                    
+                                <!--Contact Form-->
+                                <form method="post"  id="contact-form" name="contact_form">
+                                    {% csrf_token %}
+                                    <div class="row clearfix">
+                                    
+                                        <div class="column col-lg-6 col-md-12 col-sm-12">
+                                            
+                                            <div class="form-group">
+                                                <span class="icon fa fa-user"></span>
+                                                <input type="text" name="name" placeholder="Name *" required="">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <span class="icon fa fa-envelope-o"></span>
+                                                <input type="email" name="email" placeholder="Email *" required="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <span class="icon fa fa-phone"></span>
+                                                <input type="tel" name="phone" placeholder="Phone Number" >
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="column col-lg-6 col-md-12 col-sm-12">
+                                            
+                                            <div class="form-group">
+                                                <textarea name="messege" placeholder="Massage *" required=""></textarea>
+                                                {% for error in form.messege.errors %}
+                                                <p>{{error}}</p>
+                                                {% endfor %}
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <button type="submit" class="theme-btn submit-btn">Send message</button>
+                                            </div>
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                    </div>
+                                </form>
+                                    
+                            </div>
+                            <!--End contact Form -->
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+    </div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/contactme.js' %}"></script>
+</body>
+</html>

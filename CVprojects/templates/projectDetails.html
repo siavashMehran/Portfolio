@@ -1,0 +1,170 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <link rel="stylesheet" href="{%static 'cssNfonts/tabcss.css' %}">
+    <link rel="stylesheet" href="{%static 'cssNfonts/fontawesome.min.css' %}">
+    {%include 'components/meta_data.html'%}
+
+    <title>سیاوش مهران</title>
+</head>
+
+<body dir="rtl">
+
+        <header>
+            
+            <nav>
+
+                <div class="one">
+
+
+                    <div class="face-wrapper">
+
+                        <div class="element">
+                            <img class="face" src="{% static 'images/sm.png' %}" alt="">
+                            <h1 class="me">سیاوش مهران</h1>
+                        </div>
+
+                        <div class="line line-modify">
+                            <p>Motoring Enthausiast</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="two">
+                    <br>
+
+                    <div class="nav">
+                        <ul>
+                            
+                            <li class=" navbar-item"><a class="nav-items {%if request.path == '/'                         %} active {%endif%}" href="/">خانه</a></li>
+                            <li class=" navbar-item"><a class="nav-items {%if request.path == '/about'                    %} active {%endif%}" href="/about">درباره من</a></li>
+                            <li class=" navbar-item"><a class="nav-items {%if request.path == '/projects' or '/projects/' %} active {%endif%}" href="/projects">نمونه کار</a></li>
+                            <li class=" navbar-item"><a class="nav-items {%if request.path == '/contact'                  %} active {%endif%}" href="/contact">تماس</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </nav>
+
+        </header>
+        
+        
+    <br><br><br>
+
+
+
+
+    <main dir="ltr" class="projects-list-container">
+
+
+
+        
+        <section class="section">
+            <div class="title">
+              <h2>{{project.title}}</h2>
+              <p>{{paragraph}}</p>
+            </div>
+      
+            <div class="about-center section-center">
+              <article class="about-img">
+                <img src="{{project.imagMain.url}}" alt="" />
+              </article>
+              <article class="about">
+                <!-- btn container -->
+                <div class="btn-container">
+                  <button class="tab-btn active" data-id="history">Caption</button>
+                  <button class="tab-btn" data-id="vision">Details</button>
+                  <button class="tab-btn" data-id="goals">source code</button>
+                </div>
+                <div class="about-content">
+                  <!-- single item -->
+
+                  <div class="content active" id="history">
+                    <h4>detail on different sections</h4>
+                    <p>
+                        {{project.caption | linebreaks}}
+                    </p>
+                  </div>
+
+
+
+                  <!-- end of single item -->
+                  <!-- single item -->
+                  <div class="content" id="vision">
+                    <h4>Languages and Technologies Used</h4>
+                    
+                      <ul>
+                        <div class="tech-flex">
+                          {% for tech in techs %}
+                            <li>
+                              <div class="tech-single">
+                                  <p>
+                                    {{tech}}
+                                  </p>
+                              </div>
+                            </li>
+                          {% endfor %}
+                        </div>
+                      </ul>
+
+                  </div>
+
+
+
+                  <!-- end of single item -->
+                  <!-- single item -->
+
+                  <div class="content" id="goals">
+                    
+                    <div class="project-links">
+
+                      <div class="project-github">
+                        <br>
+                        <h4>source code</h4>
+                        <br>
+                        <a href="" class="btn btn-go">
+                          Github
+                        </a>
+                      </div>
+                      
+                      <div class="project-reffer">
+                        <br>
+                        <h4>Hosted Version</h4>
+                        <br>
+                        <a href="" class="btn btn-go">
+                          Preview
+                        </a>
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                  <!-- end of single item -->
+                </div>
+              </article>
+            </div>
+          </section>
+
+
+
+
+
+    </main>
+
+    
+
+
+<script src="{% static 'js/tab.js' %}"></script>  
+</body>
+
+</html>
