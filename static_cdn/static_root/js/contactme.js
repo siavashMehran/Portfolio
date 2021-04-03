@@ -17,7 +17,17 @@ $(document).ready(function(){
             },
             enctype: 'json',
             success : function(r){
-                alert(r.result)
+                document.querySelector('.form-column').innerHTML = `
+                <div class="contact-form">
+                    <div class="form-group">
+                        <button  class="theme-btn submit-btn">Send message</button>
+                    </div>
+                </div> 
+                `;
+
+                document.querySelector('.submit-btn').innerHTML=`MESSAGE SENT SUCCESSFULLY `;
+                document.querySelector('.submit-btn').style="background-color:green;";
+                
             },
             error : function(r){
                 alert(r.result)
