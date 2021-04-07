@@ -3,13 +3,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from CV import settings
-from .views import siteHeaderPartial
+from .views import sidebarPartial, siteHeaderPartial
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     #render-partial parts
     path('partial/header', siteHeaderPartial, name='siteHeaderPartial'),
+    path('partial/sidebar', sidebarPartial, name='sidebarPartial'),
 
     #apps URLs
     path('', include('CVhome.urls')),

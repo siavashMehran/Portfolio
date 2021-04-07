@@ -23,7 +23,8 @@
 
         <section class="page-title">
             <div class="auto-container">
-                <h1>Projects</h1>
+                <h1>Categories</h1>
+                <div class="title"><p>Found {{list.object_list.count}} projects in this category</p></div>
             </div>
         </section>
 
@@ -74,10 +75,6 @@
                                     {% if list.has_previous %}
                                     <li class="prev"><a href="?page={{list.previous_page_number}}"><span class="fa fa-angle-left"></span> &nbsp; Previous</a></li>
                                     {% endif %}
-
-                                    {% for num in paginator.page_range %}
-                                    <li><a href="?page={{num}}" class="{% if num == list.number %}active{%endif%}">{{num}}</a></li>
-                                    {%endfor%}
 
                                     {% if list.has_next %}
                                     <li class="next"><a href="?page={{list.next_page_number}}">Next &nbsp; <span class="fa fa-angle-right"></span></a></li>

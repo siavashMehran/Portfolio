@@ -37,9 +37,22 @@ class ProjectsManager(models.Manager):
         else        : return item.first() ;
     def get_most_viewd(self):
         return self.get_queryset().filter(isActive=True).order_by('-views')
+ 
 
 
 
+class CategoryManager(models.Manager):
+
+    def get_related_projects_or_none(self, category:str):
+
+        try:
+            qs = self.get_queryset().filter(category=category).first().project_set.all()
+            if qs != None:
+                qs = qs.order_by('-id')
+                return qs
+
+        except:
+            return None
 
 
 class LANGUAGE(models.Model):
@@ -54,8 +67,18 @@ class Categories(models.Model):
     
     category = models.CharField(max_length=40)
 
+    objects  = CategoryManager()
+
     def __str__(self):
         return self.category
+
+    def slugify(self):
+        return self.category.replace(" ", "_")
+
+    def get_absoulute_url(self):
+        slug = self.slugify()
+        return f'/cat/{slug}'
+
 
 
 
