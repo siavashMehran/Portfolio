@@ -56,12 +56,15 @@ def projectDetailView(request, slug):
     project = Project.objects.getProjectbySlug(slug)
     project.viewsPlusOne()
     allTechs = project.get_project_techs()
-        
-
+    gallery = project.gallery_set.all()
+    
+    
     
     context = {
         'project'   : project,
-        'techs' : allTechs
+        'techs' : allTechs,
     }
+    if gallery:
+        context["gallery"] = gallery
 
     return render(request, 'projectDetails.html', context)

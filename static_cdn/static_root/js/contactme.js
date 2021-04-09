@@ -24,13 +24,12 @@ $(document).ready(function(){
                     </div>
                 </div> 
                 `;
-
                 document.querySelector('.submit-btn').innerHTML=`MESSAGE SENT SUCCESSFULLY `;
                 document.querySelector('.submit-btn').style="background-color:green;";
                 
             },
             error : function(r){
-                alert(r.result)
+                alert(r.result);
             },
 
         });

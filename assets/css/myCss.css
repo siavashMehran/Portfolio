@@ -111,3 +111,8 @@
     width: 100%;
     text-align: center;
 }
+
+.additional-img{
+    display: flex;
+    flex-wrap: wrap;
+}
