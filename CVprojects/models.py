@@ -94,9 +94,6 @@ class Project(models.Model):
     source_code = models.CharField(max_length=200, blank=True)
 
     imagMain    = models.ImageField(blank=False, upload_to=media_upload_path)
-    imageSub1   = models.ImageField(blank=True, upload_to=media_upload_path)
-    imageSub2   = models.ImageField(blank=True, upload_to=media_upload_path)
-    imageSub3   = models.ImageField(blank=True, upload_to=media_upload_path)
 
     views    = models.PositiveIntegerField(default=0)
     isActive = models.BooleanField(default=True)

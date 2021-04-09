@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'CVhome',
     'CVcontact',
     'CVprojects',
+    'CVgallery',
 ]
 
 MIDDLEWARE = [
