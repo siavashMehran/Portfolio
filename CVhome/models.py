@@ -12,9 +12,9 @@ class Home(models.Model):
 
     #site intro
     bigImg   = models.ImageField(upload_to='images/')
-    p1       = models.TextField(max_length=400)
-    p2       = models.TextField(max_length=400)
-    slang    = models.CharField(max_length=200)
+    p1       = models.TextField(max_length=600)
+    p2       = models.TextField(max_length=600)
+    slang    = models.CharField(max_length=300)
 
     #social media links
     github   = models.URLField()
