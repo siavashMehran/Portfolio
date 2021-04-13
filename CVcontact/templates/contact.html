@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="page-wrapper">
-        
+        <div class="preloader"></div>
         
         
         {% include 'components/siteheader.html'%}
@@ -147,13 +147,15 @@
 
 
 
-
+        <footer class="main-footer">
+            {% include 'components/footer.html' %}
+        </footer>
 
     </div>
-
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/contactme.js' %}"></script>
+    
+    <script src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/validate.js' %}"></script> 
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/contactme.js' %}"></script>
 </body>
 </html>

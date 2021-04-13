@@ -15,10 +15,14 @@ def contactMe(request:HttpRequest):
 
     if request.is_ajax and request.method == 'POST':
         print(request.POST)
+        # the initial passing is nessissary because
+        #the name of input and the name of model attrebiute
+        #differ from each other and this is my lazy way around it
         form = ContactMeForm(request.POST, initial={'messege' : request.POST.get('messegee')})
 
         if form.is_valid():
             form.save()
+            form = ContactMeForm(request.POST)
             return JsonResponse({'result' : 'Messege Sent'})
         else:
             form.add_error('messege', 'operation failed')

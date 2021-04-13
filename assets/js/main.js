@@ -410,14 +410,14 @@
 	if($('#contact-form').length){
 		$('#contact-form').validate({
 			rules: {
-				firstname: {
+				name: {
 					required: true
 				},
 				email: {
 					required: true,
 					email: true
 				},
-				message: {
+				messege: {
 					required: true
 				}
 			}
@@ -434,7 +434,7 @@
 		   // animate
 		   $('html, body').animate({
 			   scrollTop: $(target).offset().top
-			 }, 1500);
+			 }, 2000);
 	
 		});
 	}

@@ -17,16 +17,16 @@ $(document).ready(function(){
             },
             enctype: 'json',
             success : function(r){
-                document.querySelector('.form-column').innerHTML = `
-                <div class="contact-form">
-                    <div class="form-group">
-                        <button  class="theme-btn submit-btn">Send message</button>
-                    </div>
-                </div> 
-                `;
                 document.querySelector('.submit-btn').innerHTML=`MESSAGE SENT SUCCESSFULLY `;
                 document.querySelector('.submit-btn').style="background-color:green;";
-                
+                setTimeout(function(){
+                    document.forms[1].reset()
+                    
+                }, 3000);
+                setTimeout(function(){
+                    document.querySelector('.submit-btn').innerHTML="Send Another One ";
+                    document.querySelector('.submit-btn').style="background-color:red;";
+                }, 3000);
             },
             error : function(r){
                 alert(r.result);
@@ -34,4 +34,8 @@ $(document).ready(function(){
 
         });
     });
+
+
+    
 })
+

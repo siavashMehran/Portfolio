@@ -116,3 +116,6 @@
     display: flex;
     flex-wrap: wrap;
 }
+.logo{
+    max-width: 200px;
+}
