@@ -153,9 +153,8 @@
 
     </div>
     
-    <script src="{% static 'js/jquery.js' %}"></script> 
-    <script src="{% static 'js/validate.js' %}"></script> 
-    <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/contactme.js' %}"></script>
+    
+{% include 'components/footerScripts.html' %}
+<script src="{% static 'js/contactme.js' %}"></script>
 </body>
 </html>

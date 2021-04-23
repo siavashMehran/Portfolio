@@ -52,7 +52,7 @@
                     <div class="image-column col-lg-6 col-md-12 xol-sm-12">
                         <div class="inner-column">
                             <div class="image">
-                                <img src="{{info.bigImg.url}}" alt="">
+                                <img src="{{about.bigImg.url}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -62,9 +62,9 @@
                         <div class="inner-column">
                             <h3>Biography</h3>
                             <div class="text">
-                                <p>{{info.p1 | linebreaks}}</p>
-                                <div class="quote-text">“ {{info.slang}} ”</div>
-                                <p> {{info.p2 | linebreaks}} </p>
+                                <p>{{about.p1 | linebreaks}}</p>
+                                <div class="quote-text">“ {{about.slang}} ”</div>
+                                <p> {{about.p2 | linebreaks}} </p>
                             </div>
                         </div>
                     </div>
@@ -98,11 +98,9 @@
         </footer>
 
     </div>
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/jquery.fancybox.js' %}"></script>
-<script src="{% static 'js/appear.js' %}"></script>
-<script src="{% static 'js/jquery-ui.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+    
+{% include 'components/footerScripts.html' %}
+
 </body>
 </html>
 

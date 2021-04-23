@@ -21,14 +21,47 @@
         </section>
 
 
+        <section class="skrill-section">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title">
+                    <h6>My Skills</h6>
+                </div>
+    
+                <!--Skills-->
+                <div class="skills">
+                
+                    <div class="row clearfix">
+                    
+                    {% for skill in skills %}
+                        <!--Skill Item-->
+                        <div class="skill-item column col-lg-4 col-md-6 col-sm-12">
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="skill-header clearfix">
+                                        <div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{skill.percent}}">{{skill.percent}}</span>%</div></div>
+                                        <div class="skill-title">{{skill.skill}}</div>
+                                    </div>
+                                    <div class="bar progress-line" data-width="{{skill.percent}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+
 
 
         <footer class="main-footer">
             {% include 'components/footer.html' %}
         </footer>
     </div>
-
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+    
+{% include 'components/footerScripts.html' %}
 </body>
 </html>
