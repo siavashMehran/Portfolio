@@ -10,11 +10,6 @@ class Home(models.Model):
     title    = models.TextField(max_length=80, blank=True)
     grey     = models.TextField(max_length=80, blank=True)
 
-    #social media links
-    github   = models.URLField()
-    insta    = models.URLField()
-    linkedin = models.URLField()
-
     #MY name & title
     name     = models.CharField(max_length=20)
     myTitle  = models.CharField(max_length=20)

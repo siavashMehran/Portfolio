@@ -68,10 +68,10 @@
                             <h3>My Contact Info</h3>
 
                             <div class="text txt-center">
-                                <p><a href="tel:+989335282975"><i class="social fontawe font-size-18 fa fa-phone"></i> <span>+98 933 528 2975</span></a></p>
-                                <p><a href="mailto:sia.dev.acc@gmail.com"><i class="social fontawe font-size-18 fa fa-google"></i> <span>sia.dev.acc@gmail.com</span></a></p>
-                                <p><a href="http://github.con/siavashmehran"><i class="social fontawe font-size-18 fa fa-github"></i> <span>GitHub</span></a></p>
-                                <p><a href="http://linkedin/siavashmehran"><i class="social fontawe font-size-18 fa fa-linkedin"></i> <span>LinkedIn</span></a></p>
+                                <p><a href="tel:{{info.strip_phone}}"><i class="social fontawe font-size-18 fa fa-phone"></i> <span>{{info.phone}}</span></a></p>
+                                <p><a href="mailto:{{info.email}}"><i class="social fontawe font-size-18 fa fa-google"></i> <span>{{info.email}}</span></a></p>
+                                <p><a href="{{info.github}}"><i class="social fontawe font-size-18 fa fa-github"></i> <span>GitHub</span></a></p>
+                                <p><a href="{{info.linkedin}}"><i class="social fontawe font-size-18 fa fa-linkedin"></i> <span>LinkedIn</span></a></p>
                             </div>
 
                         </div>
@@ -154,7 +154,13 @@
     </div>
     
     
-{% include 'components/footerScripts.html' %}
-<script src="{% static 'js/contactme.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/validate.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/contactme.js' %}"></script>
 </body>
 </html>

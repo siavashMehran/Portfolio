@@ -1,3 +1,4 @@
+from CVabout.models import ContactInfo
 from CVcontact.forms import ContactMeForm
 from django.http.request import HttpRequest
 from CVcontact.models import ContactMe
@@ -14,7 +15,7 @@ def ss(s):
 def contactMe(request:HttpRequest):
 
     if request.is_ajax and request.method == 'POST':
-        print(request.POST)
+
         # the initial passing is nessissary because
         #the name of input and the name of model attrebiute
         #differ from each other and this is my lazy way around it
@@ -30,7 +31,10 @@ def contactMe(request:HttpRequest):
 
     else : form = ContactMeForm()
 
+    contactInfo = ContactInfo.objects.earliest('pk')
+    
     context = {
-        'form' : form
+        'form' : form,
+        'info' : contactInfo
     }
     return render(request, "contact.html", context)

@@ -21,4 +21,22 @@ class AboutMe(models.Model):
     slang    = models.CharField(max_length=300)
 
     def __str__(self):
-        return "About me Info"
+        return "My Info"
+
+class ContactInfo(models.Model):
+
+    #social media links
+    github   = models.URLField()
+    insta    = models.URLField()
+    linkedin = models.URLField()
+
+    # contact info
+
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+
+    def __str__(self):
+        return 'Contact Info & Social Media'
+
+    def strip_phone(self):
+        return self.phone.replace(' ', '')

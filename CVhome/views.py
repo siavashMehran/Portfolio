@@ -1,14 +1,15 @@
 
-from CVabout.models import AboutMe
+from CVabout.models import AboutMe, ContactInfo
 from CVhome.models import Home
 from django.shortcuts import render
 
 def home(request):
-
-    info    = Home.objects.earliest('pk')
-    aboutMe = AboutMe.objects.earliest('pk')
+    homePageData = Home.objects.earliest('pk')
+    aboutMe      = AboutMe.objects.earliest('pk')
+    contactInfo  = ContactInfo.objects.earliest('pk')
     context = {
-        'info'  : info,
-        'about' : aboutMe
+        'info'    : contactInfo,
+        'about'   : aboutMe,
+        'home'    : homePageData
     }
     return render(request, 'index.html', context)

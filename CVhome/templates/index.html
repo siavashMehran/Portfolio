@@ -29,8 +29,8 @@
         <section class="gallery-section">
             <div class="auto-container">
                 <div class="title-box">
-                    <h1>{{info.title | linebreaks}}</h1>
-                    <div class="title">{{info.grey | linebreaks}}</div>
+                    <h1>{{home.title | linebreaks}}</h1>
+                    <div class="title">{{home.grey | linebreaks}}</div>
                     
                 </div>
                 
@@ -76,14 +76,14 @@
                     <li><a href="{{info.insta}}"><span class="fa fa-instagram"></span></a></li>
                     <li><a href="{{info.github}}"><span class="fa fa-github"></span></a></li>
                     <li><a href="{{info.linkedin}}"><span class="fa fa-linkedin"></span></a></li>
-                    <li><a href="tel:+989335282975"><span class="fa fa-phone"></span></a></li>
+                    <li><a href="tel:{{info.strip_phone}}"><span class="fa fa-phone"></span></a></li>
                 </ul>
                 
                 <!-- About Box -->
                 <div class="about-box">
                     <div class="box-inner">
-                        <h6>{{info.name}}</h6>
-                        <div class="category">{{info.myTitle}}</div>
+                        <h6>{{home.name}}</h6>
+                        <div class="category">{{home.myTitle}}</div>
                     </div>
                 </div>
                 
