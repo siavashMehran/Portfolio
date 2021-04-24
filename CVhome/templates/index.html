@@ -63,29 +63,28 @@
                             <h3>Biography</h3>
                             <div class="text">
                                 <p>{{about.p1 | linebreaks}}</p>
-                                <div class="quote-text">“ {{about.slang}} ”</div>
-                                <p> {{about.p2 | linebreaks}} </p>
+                                <!-- Social Icon Two -->
+                                <ul class="social-icon-two">
+                                    <li><a href="{{info.insta}}"><span class="fa fa-instagram"></span></a></li>
+                                    <li><a href="{{info.github}}"><span class="fa fa-github"></span></a></li>
+                                    <li><a href="{{info.linkedin}}"><span class="fa fa-linkedin"></span></a></li>
+                                    <li><a href="tel:{{info.strip_phone}}"><span class="fa fa-phone"></span></a></li>
+                                </ul>
+                                
+                                <!-- About Box -->
+                                <div class="about-box">
+                                    <div class="box-inner">
+                                        <h6>{{home.name}}</h6>
+                                        <div class="category">{{home.myTitle}}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                 </div>
                 
-                <!-- Social Icon Two -->
-                <ul class="social-icon-two">
-                    <li><a href="{{info.insta}}"><span class="fa fa-instagram"></span></a></li>
-                    <li><a href="{{info.github}}"><span class="fa fa-github"></span></a></li>
-                    <li><a href="{{info.linkedin}}"><span class="fa fa-linkedin"></span></a></li>
-                    <li><a href="tel:{{info.strip_phone}}"><span class="fa fa-phone"></span></a></li>
-                </ul>
                 
-                <!-- About Box -->
-                <div class="about-box">
-                    <div class="box-inner">
-                        <h6>{{home.name}}</h6>
-                        <div class="category">{{home.myTitle}}</div>
-                    </div>
-                </div>
                 
             </div>
         </section>
