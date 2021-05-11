@@ -92,6 +92,7 @@ class Project(models.Model):
     category    = models.ManyToManyField(Categories, blank=True)
 
     source_code = models.CharField(max_length=200, blank=True)
+    PreviwLink  = models.CharField(max_length=200, blank=True)
 
     imagMain    = models.ImageField(blank=False, upload_to=media_upload_path)
 

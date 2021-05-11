@@ -84,7 +84,9 @@
 						
 						<div class="column col-lg-3 col-md-6 col-sm-12">
 							<a href="{{project.source_code}}" class="visit-projects mybtn">Source Code</a>
-							<a href="{{project.source_code}}" class="visit-projects mybtn">previe</a>
+							{% if project.PreviwLink %}
+								<a href="{{project.PreviwLink}}" class="visit-projects mybtn">preview</a>
+							{% endif %}
 						</div>
 						
 					</div>
