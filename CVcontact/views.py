@@ -24,10 +24,11 @@ def contactMe(request:HttpRequest):
         if form.is_valid():
             form.save()
             form = ContactMeForm(request.POST)
-            return JsonResponse({'result' : 'Messege Sent'})
+            return JsonResponse({'result' : 'Messege Sent'}, status=200)
+
         else:
             form.add_error('messege', 'operation failed')
-            return JsonResponse({'result' : 'Please try againg'})
+            return JsonResponse({'result' : 'invalid operation, Please try againg'}, status=400)
 
     else : form = ContactMeForm()
 
