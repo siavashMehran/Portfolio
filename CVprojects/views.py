@@ -18,7 +18,7 @@ def projects(request, *args, **kwargs):
     projectList = Project.objects.get_all_active()
 
     #paginator
-    paginator = Paginator(projectList, 1, allow_empty_first_page=True)
+    paginator = Paginator(projectList, 4, allow_empty_first_page=True)
     pageRequest = request.GET.get('page')
     pageObj = paginator.get_page(pageRequest)
 
@@ -37,7 +37,7 @@ def search(request, cat:str, *args, **kwargs):
     
     # paginator
     
-    paginator = Paginator(category, 1, allow_empty_first_page=True)
+    paginator = Paginator(category, 4, allow_empty_first_page=True)
     pageRequest = request.GET.get('page')
     pageObj = paginator.get_page(pageRequest)
 

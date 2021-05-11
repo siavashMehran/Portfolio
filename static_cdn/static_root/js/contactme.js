@@ -29,7 +29,9 @@ $(document).ready(function(){
                 }, 3000);
             },
             error : function(r){
-                alert(r.result);
+                
+                alert(r.responseJSON.result);
+                
             },
 
         });
