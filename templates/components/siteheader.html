@@ -38,7 +38,7 @@
                                 <li class="dropdown{% if request.path == '/contact' %} current{% endif %}"><a href="/contact">Contact Me</a></li>
 
 
-                                <li class="dropdown{% if request.path == '/projects'%} current{% endif %}"><a href="/projects">Portfolio</a></li>
+                                <li class="dropdown{% if '/projects' in request.path %} current{% endif %}"><a href="/projects">Portfolio</a></li>
 
 
                                 <!-- search button is yet to be done -->
