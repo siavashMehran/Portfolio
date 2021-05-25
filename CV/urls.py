@@ -13,10 +13,10 @@ urlpatterns = [
     path('partial/sidebar', sidebarPartial, name='sidebarPartial'),
 
     #apps URLs
-    path('', include('CVhome.urls')),
-    path('', include('CVcontact.urls')),
+    path('', include('CVhome.urls'    )),
+    path('', include('CVcontact.urls' )),
     path('', include('CVprojects.urls')),
-    path('', include('CVabout.urls')),
+    path('', include('CVabout.urls'   )),
 ]
 
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -21,3 +21,23 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.project.title
+
+
+
+def social_media_upload_path(instance, filepath):
+    
+    def get_name_ext(filepath):
+        fullName      = os.path.basename(filepath)
+        filename, ext = os.path.splitext(fullName)
+        return filename, ext
+    
+    filename, ext = get_name_ext(filepath)
+    return f"social_posts/{instance.__str__().replace(' ', '-')}/{filename}{ext}"
+
+class SocialAccountPosts(models.Model):
+
+    post_title = models.CharField(max_length=100)
+    post_image = models.ImageField(upload_to=social_media_upload_path)
+    
+    def __str__(self):
+        return self.post_title

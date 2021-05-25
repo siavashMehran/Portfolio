@@ -34,43 +34,22 @@
                 </ul>
             </div>
         </div>
-        
-        <!-- Instagram Widget -->
-        <div class="sidebar-widget instagram-widget">
-            <div class="sidebar-title">
-                <h3>instagram</h3>
-            </div>
-            <div class="widget-content">
-                <div class="images-outer clearfix">
-                    <!--Image Box-->
-                    <figure  class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-                
-                    <figure class="image-box"><a href="{% static 'images/gallery/instagram-1.jpg' %}" class="instagram-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
-                    <img src="{% static 'images/gallery/instagram-1.jpg' %}" alt=""></figure>
-            
-                
+        {% if instagram %}
+            <!-- Instagram Widget -->
+            <div class="sidebar-widget instagram-widget">
+                <div class="sidebar-title">
+                    <h3>instagram</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="images-outer clearfix">
+                        {% for post in instagram_posts %}
+                            <!--Image Box-->
+                            <figure  class="image-box"><a href="{{post.post_image.url}}" class="instagram-image" data-caption="" data-fancybox="instagram" title="{{post.post_title}}" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus"></span></a>
+                            <img src="{{post.post_image.url}}" alt=""></figure>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </div>
-        
+        {% endif %}
     </aside>
 </div>
