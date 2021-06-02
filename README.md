@@ -27,8 +27,10 @@
 ---
 
 # This is my personal portfolio
-<p>it uses Django3 for back-end</p>
-
+<h2>it uses Django 3 for back-end</h2>
+<h2>it is a few touches from production but you can still see whats what in the link below</h2>
+<h2><a href="https://SiavashMehran.pythonanywhere.com">This project is deployed here on a "PythonAnyWhere" free hosting plan</a></h2>
+ <img src="https://raw.githubusercontent.com/siavashMehran/Portfolio/master/Screenshot.png" alt="screenshot of index page"></a>
 ## 🎈 how to run <a name = "usage"></a>
 
 navigate to desired directory<br>
