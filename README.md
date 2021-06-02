@@ -1,12 +1,35 @@
 # Portfolio
 
 
-# This is my personal portfolio
 
+
+
+
+
+
+
+
+
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://raw.githubusercontent.com/siavashMehran/Portfolio/master/assets/images/sm.png" alt="Bot logo"></a>
+</p>
+
+<h3 align="center">Portfolio</h3>
+
+<div align="center">
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+---
+
+# This is my personal portfolio
 <p>it uses Django3 for back-end</p>
 
-
-##### how to run
+## 🎈 how to run <a name = "usage"></a>
 
 navigate to desired directory<br>
 run:<br>
@@ -18,7 +41,4 @@ run:<br>
 4. `python manage.py makemigrations`
 5. `python manage.py migrate`
 6. `python manage.py runserver [port number : default is 8000]`
-
-
-
 
