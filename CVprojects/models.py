@@ -88,8 +88,10 @@ class Project(models.Model):
     title       = models.CharField(max_length=50, blank=False)
     caption     = models.TextField(max_length=700, blank=False)
     slug        = models.SlugField(max_length=20, blank=True, unique=True)
-    technology  = models.ManyToManyField(LANGUAGE, blank=True)
-    category    = models.ManyToManyField(Categories, blank=True)
+
+    technology      = models.ManyToManyField(LANGUAGE, blank=True)
+    category        = models.ManyToManyField(Categories, blank=True)
+    key_features    = models.TextField(max_length=700, blank=True)
 
     source_code = models.CharField(max_length=200, blank=True)
     PreviwLink  = models.CharField(max_length=200, blank=True)
@@ -119,7 +121,10 @@ class Project(models.Model):
         if self : techs = self.technology.all() ;
         else    : return None
         return techs
-
+        
+    def key_features_readable(self):
+        list_of_features = self.key_features.split('\n')
+        return list_of_features
     
 
 

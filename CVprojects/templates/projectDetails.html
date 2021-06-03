@@ -76,11 +76,24 @@
 								</div>
 							</p>
 						</div>
-						
-						<div class="column col-lg-3 col-md-6 col-sm-12">
-							<h5>Team</h5>
-							<p>Design, HTML Coding &amp; WordPress Development</p>
-						</div>
+
+
+						{% if project.key_features %}
+							<div class="column col-lg-3 col-md-6 col-sm-12">
+								<h5>Project Key Features</h5>
+
+								<div class="sidebar-widget category-widget">
+									<div class="widget-content">
+										<ul>
+											{% for feature in project.key_features_readable %}
+											<li><a>{{feature}}</a></li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+
 						
 						<div class="column col-lg-3 col-md-6 col-sm-12">
 							<a href="{{project.source_code}}" class="visit-projects mybtn">Source Code</a>

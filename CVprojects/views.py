@@ -22,7 +22,6 @@ def projects(request, *args, **kwargs):
     paginator = Paginator(projectList, 4, allow_empty_first_page=True)
     pageRequest = request.GET.get('page')
     pageObj = paginator.get_page(pageRequest)
-
     context = {
         'list'       :  pageObj,
         'paginator'  : paginator,
@@ -58,7 +57,6 @@ def projectDetailView(request, slug):
     project.viewsPlusOne()
     allTechs = project.get_project_techs()
     gallery = project.gallery_set.all()
-    
     
     
     context = {
