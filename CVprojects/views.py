@@ -12,10 +12,11 @@ def ss(s):
     print()
     print()
 
+
 def projects(request, *args, **kwargs):
 
     #QuerrySet
-    projectList = Project.objects.get_all_active()
+    projectList = Project.objects.get_all_active().order_by('-timestamp')
 
     #paginator
     paginator = Paginator(projectList, 4, allow_empty_first_page=True)
